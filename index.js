@@ -18,7 +18,17 @@ const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@clu
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
+async function run(){
+    try{
+        const serviceCollection = client.db('photographer').collection('pServices');
+        const orderCollection = client.db('photographer').collection('orders');
+    }
+    finally{
 
+    }
+}
+
+run().catch(err => console.error(err));
 
 app.get('/', (req,res) =>{
     res.send('photographer server is running')
